@@ -1,6 +1,6 @@
-
+ï»¿
 //==================================================
-// ³» ¹æ½Ä
+// ë‚´ ë°©ì‹
 //#include "stdafx.h"
 //#include "Player.h"
 //
@@ -43,7 +43,7 @@
 //
 //	Key_Input();
 //
-//	// ÀÌµ¿ ¿¬»ê ¸ÕÀú
+//	// ì´ë™ ì—°ì‚° ë¨¼ì €
 //	D3DXMATRIX	matTrans;
 //	
 //	D3DXMatrixTranslation(&matTrans, m_tInfo.vDir.x, m_tInfo.vDir.y, 0.f);
@@ -67,7 +67,7 @@
 //	}
 //
 //
-//	// ÀÌµ¿µÈ Pos±âÁØ È¸Àü ¿¬»ê
+//	// ì´ë™ëœ Posê¸°ì¤€ íšŒì „ ì—°ì‚°
 //	// Body
 //	D3DXMATRIX	matRotZ;
 //	D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(m_fAngle));
@@ -75,8 +75,8 @@
 //
 //	for (auto& _iter : m_vTankBody)
 //	{
-//		// º¯°æµÈ ±âÁØÁ¡À» ¼ö½Ä¿¡ ³Ö´Â ´ë½Å,
-//		// ÁÂÇ¥ ÀÚÃ¼¸¦ 0Á¡À¸·Î ¿Å°Ü¼­ È¸ÀüÇÑ ÈÄ, ¿ø·¡ÀÚ¸®·Î °®´Ù³õ´Â °Í °°´Ù.
+//		// ë³€ê²½ëœ ê¸°ì¤€ì ì„ ìˆ˜ì‹ì— ë„£ëŠ” ëŒ€ì‹ ,
+//		// ì¢Œí‘œ ìì²´ë¥¼ 0ì ìœ¼ë¡œ ì˜®ê²¨ì„œ íšŒì „í•œ í›„, ì›ë˜ìë¦¬ë¡œ ê°–ë‹¤ë†“ëŠ” ê²ƒ ê°™ë‹¤.
 //		_iter.x -= m_tInfo.vPos.x;
 //		_iter.y -= m_tInfo.vPos.y;
 //		D3DXVec3TransformCoord(&_iter, &_iter, &m_tInfo.matWorld);
@@ -142,7 +142,7 @@
 //}
 
 //==================================================
-// ¿µ¿õÀÌ ¹æ½Ä
+// ì˜ì›…ì´ ë°©ì‹
 
 //#include "stdafx.h"
 //#include "Player.h"
@@ -155,6 +155,7 @@
 //{
 //	Release();
 //}
+//
 //
 //void CPlayer::Initialize(void)
 //{
@@ -182,7 +183,7 @@
 //{
 //	Key_Input();
 //	
-//	// ÀüÃ¼ È¸Àü
+//	// ì „ì²´ íšŒì „
 //	Setting();
 //
 //	D3DXMATRIX	matScale, matRotZ, matTrans;
@@ -200,7 +201,7 @@
 //
 //	D3DXVec3TransformNormal(&m_tInfo.vDir, &m_tInfo.vDir, &m_tInfo.matWorld);
 //
-//	//Æ÷½Å È¸Àü
+//	//í¬ì‹  íšŒì „
 //	Setting_OnlyPosin();
 //
 //	D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
@@ -282,13 +283,15 @@
 //}
 
 //==================================================
-// Çö¼ö ¹æ½Ä
+// í˜„ìˆ˜ ë°©ì‹
 
 #include "stdafx.h"
 #include "Player.h"
 
 CPlayer::CPlayer()
 {
+	// ì¸ì½”ë”© í™•ì¸
+	int i = 0;
 }
 
 CPlayer::~CPlayer()
@@ -324,7 +327,7 @@ void CPlayer::Update(void)
 {
 	Key_Input();
 
-	// ÀüÃ¼ È¸Àü
+	// ì „ì²´ íšŒì „
 
 	D3DXMATRIX	matScale, matRotZ, matTrans;
 
@@ -341,7 +344,7 @@ void CPlayer::Update(void)
 
 	D3DXVec3TransformNormal(&m_tInfo.vDir, &m_tInfoLocal.vDir, &m_tInfo.matWorld);
 
-	//Æ÷½Å È¸Àü
+	//í¬ì‹  íšŒì „
 
 	D3DXMatrixScaling(&matScale, 1.f, 1.f, 1.f);
 	D3DXMatrixRotationZ(&matRotZ, D3DXToRadian(m_fAnglePosin));
