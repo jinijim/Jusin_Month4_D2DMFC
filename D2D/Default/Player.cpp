@@ -290,8 +290,6 @@
 
 CPlayer::CPlayer()
 {
-	// 인코딩 확인
-	int i = 0;
 }
 
 CPlayer::~CPlayer()
@@ -360,18 +358,18 @@ void CPlayer::Render(HDC hDC)
 {
 	// Body
 	MoveToEx(hDC, m_vTankBody[0].x, m_vTankBody[0].y, NULL);
-	LineTo(hDC, m_vTankBody[1].x, m_vTankBody[1].y);
-	LineTo(hDC, m_vTankBody[2].x, m_vTankBody[2].y);
-	LineTo(hDC, m_vTankBody[3].x, m_vTankBody[3].y);
-	LineTo(hDC, m_vTankBody[0].x, m_vTankBody[0].y);
+	LineTo(hDC, (int)m_vTankBody[1].x, (int)m_vTankBody[1].y);
+	LineTo(hDC, (int)m_vTankBody[2].x, (int)m_vTankBody[2].y);
+	LineTo(hDC, (int)m_vTankBody[3].x, (int)m_vTankBody[3].y);
+	LineTo(hDC, (int)m_vTankBody[0].x, (int)m_vTankBody[0].y);
 
 	// Posin
-	MoveToEx(hDC, m_vTankPosin[0].x, m_vTankPosin[0].y, NULL);
-	LineTo(hDC, m_vTankPosin[1].x, m_vTankPosin[1].y);
+	MoveToEx(hDC, (int)m_vTankPosin[0].x, (int)m_vTankPosin[0].y, NULL);
+	LineTo(hDC, (int)m_vTankPosin[1].x, (int)m_vTankPosin[1].y);
 
 	// Head
-	Ellipse(hDC, m_vTankBody[0].x - 10.f, m_vTankBody[0].y - 10.f, m_vTankBody[0].x + 10.f, m_vTankBody[0].y + 10.f);
-	Ellipse(hDC, m_vTankBody[3].x - 10.f, m_vTankBody[3].y - 10.f, m_vTankBody[3].x + 10.f, m_vTankBody[3].y + 10.f);
+	Ellipse(hDC, (int)m_vTankBody[0].x - 10.f, (int)m_vTankBody[0].y - 10.f, (int)m_vTankBody[0].x + 10.f, (int)m_vTankBody[0].y + 10.f);
+	Ellipse(hDC, (int)m_vTankBody[3].x - 10.f, (int)m_vTankBody[3].y - 10.f, (int)m_vTankBody[3].x + 10.f, (int)m_vTankBody[3].y + 10.f);
 }
 
 void CPlayer::Release(void)
@@ -394,6 +392,7 @@ void CPlayer::Key_Input(void)
 
 	if (GetAsyncKeyState('A'))
 		m_fAngle -= 3.f;
+	//DXD3TORadian으로 할지? >> 또는 연산할때만 할지
 
 	if (GetAsyncKeyState('D'))
 		m_fAngle += 3.f;
